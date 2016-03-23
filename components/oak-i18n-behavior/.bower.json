@@ -1,0 +1,36 @@
+{
+  "name": "oak-i18n-behavior",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "oak-i18n-behavior.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "^4.0.0"
+  },
+  "_release": "cd77e25c1f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "cd77e25c1f3fdcbac198e5271ade33b49dac7833"
+  },
+  "_source": "https://github.com/FamilySearchElements/oak-i18n-behavior.git",
+  "_target": "master",
+  "_originalSource": "https://github.com/FamilySearchElements/oak-i18n-behavior.git",
+  "_direct": true
+}
