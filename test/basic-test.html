@@ -39,7 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         });
 
         test('it should properly set the lang', function() {
-          expect(navigator.language).to.contain(el.lang);
+          expect(navigator.languages[0]).to.contain(el.lang);
         });
 
       });

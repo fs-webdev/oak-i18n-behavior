@@ -11,7 +11,7 @@
     };
     var computeLocale = function(lang) {
       var regex = /^\w{2}/;
-      lang = (typeof lang !== 'string' || !lang) ? navigator.language : lang;
+      lang = (typeof lang !== 'string' || !lang) ? navigator.languages[0] : lang;
       var matches = lang.match(regex);
 
       if (matches && matches.length) {
@@ -23,9 +23,9 @@
     // By default we use the ISO 639-1 standard for language
     // codes (https://www.loc.gov/standards/iso639-2/php/code_list.php).
     // Set the default value of `_locale` to a trimmed 2 character version
-    // of the value of `navigator.language` if `fslanguage` is not present
+    // of the value of `navigator.languages[0]` if `fslanguage` is not present
     var _locale = (function(fslanguage) {
-      return fslanguage || computeLocale(navigator.language);          
+      return fslanguage || computeLocale(navigator.languages[0]);
     })(readCookie('fslanguage'));
 
     var _instances = [];
