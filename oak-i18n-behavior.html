@@ -9,23 +9,39 @@
       var parts = value.split("; " + name + "=");
       if (parts.length == 2) return parts.pop().split(";").shift();
     };
+
+    /**
+     * Gets the preferred language from the browser.
+     */
+    var getNavigatorLanguage = function() {
+      var navLang = navigator.language;
+
+      /* navigator.languages[0] is better, if it exists, because navigator.language is set
+       * to the OS language in Chrome. */
+      if (navigator.languages && navigator.languages.length > 0) {
+        navLang = navigator.languages[0];
+      }
+
+      return navLang;
+    };
+
     var computeLocale = function(lang) {
       var regex = /^\w{2}/;
-      lang = (typeof lang !== 'string' || !lang) ? navigator.languages[0] : lang;
+      lang = (typeof lang !== 'string' || !lang) ? getNavigatorLanguage() : lang;
       var matches = lang.match(regex);
 
       if (matches && matches.length) {
         return matches[0];
       }
       return 'en';
-    }
+    };
 
     // By default we use the ISO 639-1 standard for language
     // codes (https://www.loc.gov/standards/iso639-2/php/code_list.php).
     // Set the default value of `_locale` to a trimmed 2 character version
     // of the value of `navigator.languages[0]` if `fslanguage` is not present
     var _locale = (function(fslanguage) {
-      return fslanguage || computeLocale(navigator.languages[0]);
+      return fslanguage || computeLocale(getNavigatorLanguage());
     })(readCookie('fslanguage'));
 
     var _instances = [];
