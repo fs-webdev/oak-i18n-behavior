@@ -1,7 +1,7 @@
 <script>
   /**
    * ## oak-i18n-behavior
-   * 
+   *
    */
   (function(window) {
     var readCookie = function(name) {
@@ -44,9 +44,12 @@
       return fslanguage || computeLocale(getNavigatorLanguage());
     })(readCookie('fslanguage'));
 
+    //Set the language for wc-i18n v2
+    window.WCI18n ? window.WCI18n.setLanguage(_locale) : window.WCI18n = {language: _locale};
+
     var _instances = [];
 
-    /** 
+    /**
      * @polymerBehavior OakI18nBehavior
      * @demo demo/index.html
      */
@@ -76,7 +79,7 @@
 
       /**
        * A setter that should be used to set the current
-       * locale on the page 
+       * locale on the page
        *
        * _NOTE: This will update *all* consuming components'
        * `lang` value_
