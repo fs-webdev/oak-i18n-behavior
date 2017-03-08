@@ -40,9 +40,13 @@
     // codes (https://www.loc.gov/standards/iso639-2/php/code_list.php).
     // Set the default value of `_locale` to a trimmed 2 character version
     // of the value of `navigator.languages[0]` if `fslanguage` is not present
-    var _locale = (function(fslanguage) {
-      return fslanguage || computeLocale(getNavigatorLanguage());
-    })(readCookie('fslanguage'));
+    var _locale = (function() {
+      if(window.FS && window.FS.simpleLocale) {
+        return window.FS.simpleLocale();
+      } else {
+        return readCookie('fslanguage') || computeLocale(getNavigatorLanguage());
+      }
+    })();
 
     //Set the language for wc-i18n v2
     window.WCI18n ? window.WCI18n.setLanguage(_locale) : window.WCI18n = {language: _locale};
