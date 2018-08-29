@@ -1,0 +1,22 @@
+{
+  "name": "oak-i18n-behavior",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/FamilySearchElements/oak-i18n-behavior.svg?branch=master)](https://travis-ci.org/FamilySearchElements/oak-i18n-behavior) [![Coverage Status](https://coveralls.io/repos/github/FamilySearchElements/oak-i18n-behavior/badge.svg?branch=master)](https://coveralls.io/github/FamilySearchElements/oak-i18n-behavior?branch=master)",
+  "main": "oak-i18n-behavior.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fs-webdev/oak-i18n-behavior.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fs-webdev/oak-i18n-behavior/issues"
+  },
+  "homepage": "https://github.com/fs-webdev/oak-i18n-behavior#readme"
+}
