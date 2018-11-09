@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    istanbul: {
+    istanbub: {
       dir: "./coverage",
       reporters: [
         "text-summary", "lcov"

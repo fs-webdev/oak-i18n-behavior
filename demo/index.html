@@ -13,8 +13,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>oak-i18n-behavior Demo</title>
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../oak-i18n-behavior.html">
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="../oak-i18n-behavior.js"></script>
   </head>
   <body>
 
@@ -23,13 +23,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <label>Current Language:</label> <span id='lang'></span>
     </p>
 
-    <script>
-      document.addEventListener('WebComponentsReady', function(){
-        var lang = document.querySelector('#lang');
-        lang.textContent = OakI18nBehavior.locale;
-      });
-
-    </script>
+    <script type="module">
+import '../oak-i18n-behavior.js';
+var lang = document.querySelector('#lang');
+lang.textContent = OakI18nBehavior.locale;
+</script>
 
   </body>
 </html>

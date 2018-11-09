@@ -13,12 +13,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
 
     <!-- Step 1: import the element to test -->
-    <link rel="import" href="../oak-i18n-behavior.html">
-    <link rel="import" href="./x-el.html">
+    <script type="module" src="../oak-i18n-behavior.js"></script>
+    <script type="module" src="./x-el.js"></script>
   </head>
   <body>
 
@@ -29,7 +29,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
     </test-fixture>
 
-    <script>
+    <script type="module">
+      import '../oak-i18n-behavior.js';
+      import './x-el.js';
       suite('<oak-i18n-behavior>', function() {
 
         var el;

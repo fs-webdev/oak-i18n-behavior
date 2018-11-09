@@ -2,8 +2,7 @@ language: node_js
 sudo: true
 dist: trusty
 before_script:
-  - npm install -g bower polylint web-component-tester istanbul git+https://github.com/thedeeno/web-component-tester-istanbul.git coveralls
-  - bower install
+  - 'npm install -g polylint web-component-tester istanbul git+https://github.com/thedeeno/web-component-tester-istanbul.git coveralls'
   - polylint
 env:
   global:
@@ -22,6 +21,7 @@ addons:
       - g++-4.8
   sauce_connect: true
 script:
-  - xvfb-run wct
-  - "if [ \"${TRAVIS_PULL_REQUEST}\" = \"false\" ]; then wct -s 'default'; fi"
-after_script: 'cat ./coverage/lcov.info | coveralls'
+  - xvfb-run wct --module-resolution=node --npm
+  - 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then wct --module-resolution=node --npm -s ''default''; fi'
+after_script: cat ./coverage/lcov.info | coveralls
+
